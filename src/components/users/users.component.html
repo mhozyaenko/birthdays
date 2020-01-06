@@ -1,0 +1,10 @@
+<div class="users">
+  <h3>
+    Our greetings in {{currentMonth.name}} to:
+  </h3>
+  <ol>
+    <li *ngFor="let user of sortedUsers">
+      {{user.firstName}} {{user.lastName}} - {{user.dob | date: 'dd MMMM'}}
+    </li>
+  </ol>
+</div>

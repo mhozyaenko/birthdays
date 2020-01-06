@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="months">
+    <div
+      *ngFor="let month of monthsList; index as i"
+      class="months-item"
+      [ngClass]="getCountStyle(month.users.length)"
+      (mouseenter)="showUsersList(i)"
+      (mouseleave)="hideUsersList()">
+      {{month.name}}
+    </div>
+  </div>
+  <div *ngIf="showUsers">
+    <app-users-list [currentMonth]="currentMonth"></app-users-list>
+  </div>
+</div>
